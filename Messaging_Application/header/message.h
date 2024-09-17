@@ -13,7 +13,7 @@ public:
     virtual ~Message() = default;
     virtual void displayContent() const = 0;
     virtual std::string getMessageType() const = 0;
-private:    
+protected:    
     User* m_sender;
     Conversation* m_conversation;
     std::chrono::time_point<std::chrono::system_clock> timestamp_;
