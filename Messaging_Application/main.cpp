@@ -16,7 +16,7 @@ int main() {
     while (action != 4) {
         std::string line;
         std::cout << "Send message to " << obj2.getName() << ": ";
-        std::getline(std::cin, line); // Use getline to capture the entire input
+        std::getline(std::cin, line);
         if (line.empty()) continue;
 
         TextMessage* tmp = new TextMessage(&obj1, conversation, line);
@@ -24,10 +24,9 @@ int main() {
         obj1.sendMessage(tmp, conversation);
         obj2.receiveMessage(tmp);
 
-        ++action; // For simulation purposes, limit the loop
+        ++action;
     }
-
-    // Display conversation history
+    
     obj1.viewConversationHistory(conversation);
     return 0;
 }
