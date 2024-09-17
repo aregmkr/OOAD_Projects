@@ -22,6 +22,7 @@ public:
     std::vector<Message*> viewConversationHistory(Conversation* conversation) const override;
     void sendMessage(Message* message, Conversation* conversation) override;
     void receiveMessage(Message* message) override;
+    std::string getName() const;
 private:
     std::string m_name;
     std::string m_contactInfo;

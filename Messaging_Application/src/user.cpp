@@ -4,6 +4,9 @@
 User::User(const std::string& name, const std::string& contactInfo) : m_name{name}, m_contactInfo{contactInfo} {}
 
 User::~User() {
+    for (int i = 0; i < m_conversations.size(); ++i) {
+        delete m_conversations[i];
+    }
     m_conversations.clear();
 }
 
@@ -55,5 +58,13 @@ void User::sendMessage(Message* Message, Conversation* conversation) {
 }
 
 std::vector<Message*> User::viewConversationHistory(Conversation* conversation) const {
+    std::vector<Message*> messages = conversation->getMessages();
+    for (int i = 0; i < messages.size(); ++i) {
+        messages[i]->displayContent();
+    } 
     return conversation->getMessages();
+}
+
+std::string User::getName() const {
+    return m_name;
 }
