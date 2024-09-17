@@ -11,22 +11,11 @@ int main() {
     obj1.createConversation(obj2);
 
     Conversation* conversation = obj1.getConversations().front();
-    
-    int action = 0;
-    while (action != 4) {
-        std::string line;
-        std::cout << "Send message to " << obj2.getName() << ": ";
-        std::getline(std::cin, line);
-        if (line.empty()) continue;
+    TextMessage* tmp = new TextMessage(&obj1, conversation, "Hi");
+    TextMessage* tmp3 = new TextMessage(&obj1, conversation, "Hi2");
 
-        TextMessage* tmp = new TextMessage(&obj1, conversation, line);
-        conversation->addMessage(tmp);
-        obj1.sendMessage(tmp, conversation);
-        obj2.receiveMessage(tmp);
-
-        ++action;
-    }
-    
+    conversation->addMessage(tmp);
+    conversation->addMessage(tmp3);
     obj1.viewConversationHistory(conversation);
     return 0;
 }

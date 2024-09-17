@@ -60,6 +60,7 @@ void User::sendMessage(Message* Message, Conversation* conversation) {
 std::vector<Message*> User::viewConversationHistory(Conversation* conversation) const {
     std::vector<Message*> messages = conversation->getMessages();
     for (int i = 0; i < messages.size(); ++i) {
+        std::cout << "About message: " << std::endl;
         messages[i]->displayContent();
     } 
     return conversation->getMessages();
