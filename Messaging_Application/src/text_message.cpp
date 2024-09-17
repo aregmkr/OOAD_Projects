@@ -1,4 +1,4 @@
-#include "textMessage.h"
+#include "../header/textMessage.h"
 
 TextMessage::TextMessage(User* sender, Conversation* conversation, const std::string& content) : Message(sender, conversation), m_content{content} {}
 
