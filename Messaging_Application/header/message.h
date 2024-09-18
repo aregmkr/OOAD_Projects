@@ -4,8 +4,8 @@
 #include <chrono>
 #include <string>
 
-class Conversation;
-class User;
+// class Conversation;
+// class User;
 
 class Message {
 public:

@@ -1,11 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
-//#include "conversaiton.h"
+#include "conversation.h"
 #include "message.h"
 #include "messaging_manager.h"
-
-class Conversation;
 
 class User : public MessagingManager{
 public:
@@ -23,6 +21,7 @@ public:
     void sendMessage(Message* message, Conversation* conversation) override;
     void receiveMessage(Message* message) override;
     std::string getName() const;
+    //void createChat();
 private:
     std::string m_name;
     std::string m_contactInfo;

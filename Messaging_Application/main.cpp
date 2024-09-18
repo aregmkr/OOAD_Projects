@@ -7,6 +7,7 @@
 
 int main() {
     User obj1("Bob", "1234");
+
     User obj2("Obama", "5678");
     obj1.createConversation(obj2);
 
@@ -17,5 +18,6 @@ int main() {
     conversation->addMessage(tmp);
     conversation->addMessage(tmp3);
     obj1.viewConversationHistory(conversation);
+
     return 0;
 }
