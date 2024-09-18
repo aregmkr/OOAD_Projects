@@ -17,6 +17,5 @@ int main() {
     conversation->addMessage(tmp);
     conversation->addMessage(tmp3);
     obj1.viewConversationHistory(conversation);
-
     return 0;
 }
