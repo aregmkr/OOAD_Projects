@@ -6,7 +6,7 @@ TextMessage::TextMessage(User* sender, Conversation* conversation, const std::st
 void TextMessage::displayContent() const {
     std::time_t time = std::chrono::system_clock::to_time_t(timestamp_);
     std::cout << m_content << std::endl;
-    std::cout << std::ctime(&time); 
+     std::cout << "Message sented at " << std::ctime(&time); 
 }
 
 std::string TextMessage::getMessageType() const {
