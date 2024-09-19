@@ -1,5 +1,5 @@
 #include <iostream>
-#include </home/areg/Desktop/cpp_synergy/Practice/OOP_A/Banking_Account_System/header/account.h>
+#include "header/account.h"
 #include "header/customer.h"
 #include "header/transaction.h"
 #include "header/transactionManager.h"

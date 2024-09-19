@@ -1,6 +1,6 @@
 #include <iostream>
-#include "account.h"
-#include "transaction.h"
+#include "../header/transaction.h"
+#include "../header/account.h"
 
 std::string toString(AccountType type) {
 	switch(type) {

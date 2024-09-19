@@ -4,7 +4,7 @@
 #include "transactionManager.h"
 #include <vector>
 
-// enums for transaction types and accaount types its elegeant bro
+// enums for transaction types are elegeant bro
 
 enum AccountType {
 	Checking,
