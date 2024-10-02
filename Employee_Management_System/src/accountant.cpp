@@ -11,7 +11,7 @@ int Accountant::getfinanceReports() const {
 }
 
 Accountant::Accountant(const std::string& name, double baseSalary, size_t reports) 
-    : Employee(name, baseSalary, Finance), financeReports{reports} {}
+    : Employee(name, baseSalary, Finance), financeReports(reports) {}
 
 void Accountant::displayInfo() {
     std::cout << "Name: " << getName() << std::endl;

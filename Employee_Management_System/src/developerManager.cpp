@@ -30,4 +30,5 @@ void DeveloperManager::removeDeveloper(int id) {
             developers.erase(developers.begin() + i);
         }
     }
+    calculateSalary();
 }
