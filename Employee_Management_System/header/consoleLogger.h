@@ -3,5 +3,7 @@
 
 class ConsoleLogger : public ILogger {
 public:
-    void log(const std::string& message) const override;  
+    void log(const std::string& message) const override;
+    
+private:
 };

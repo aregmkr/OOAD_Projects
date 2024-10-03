@@ -1,11 +1,14 @@
 #pragma once 
-#include "financeManager.h"
+#include <memory>
+#include <iostream>
+#include "developer.h"
+#include "hrRepresentive.h"
+#include "salesPerson.h"
+#include "accountant.h"
 #include "developerManager.h"
 #include "hrManager.h"
+#include "financeManager.h"
 #include "sales_manager.h"
-#include <memory>
-#include <vector>
-#include <iostream>
 
 class EmployeeManagmentSystem {
 public: 
@@ -14,10 +17,14 @@ public:
     void addEmployeeToDepartament(std::shared_ptr<HrRepresentive> hr);
     void addEmployeeToDepartament(std::shared_ptr<Accountant> acc);
     void addEmployeeToDepartament(std::shared_ptr<SalesPerson> sales);
-
+    void setManager(std::shared_ptr<DeveloperManager> dev_man);
+    void setManager(std::shared_ptr<HrManager> hr_man);
+    void setManager(std::shared_ptr<SalesManager> sale_man);
+    void setManager(std::shared_ptr<FinanceManager> fin_man);
     void displayAllEmployeesByDepartament(Type type);
     void removeEmployee(int id, Type type);
     double calculateTotalSalary(Type type);
+    void displayTotalSalaires() const;
 private:
     std::shared_ptr<FinanceManager> financeManager;
     std::shared_ptr<HrManager> hrManager;

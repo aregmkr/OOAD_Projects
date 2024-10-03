@@ -11,18 +11,20 @@ void FinanceManager::addAccountant(Accountant* acc) {
 }
 
 void FinanceManager::displayInfo() {
-    std::cout << "Name: " << getName() << std::endl;
-    std::cout << "Accountant id: " << getId() << std::endl;
-    std::cout << "Base salary: " << getBaseSalary() << std::endl;
-    std::cout << "Accounts: " << getAccountsCount() << std::endl;
+    std::cout << "\n--- Finance Department ---" << std::endl;
+    for (int i = 0; i < accountants.size(); ++i) {
+        accountants[i]->displayInfo();
+    }
 }
 
 double FinanceManager::calculateSalary() {
     double total = 0;
-    for (size_t i = 0; i < accountants.size(); ++i) {
-        double final = accountants[i]->getBaseSalary() + accountants[i]->getfinanceReports() * (10 * (accountants[i]->getBaseSalary() / 100));
-        accountants[i]->setFinalSalary(final);
-        total += final;
+    if (accountants.empty()) {
+        for (size_t i = 0; i < accountants.size(); ++i) {
+            double final = accountants[i]->getBaseSalary() + accountants[i]->getfinanceReports() * (10 * (accountants[i]->getBaseSalary() / 100));
+            accountants[i]->setFinalSalary(final);
+            total += final;
+        }  
     }
     return total;
 }

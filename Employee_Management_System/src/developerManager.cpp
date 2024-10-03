@@ -9,16 +9,18 @@ void DeveloperManager::addDeveloper(Developer* developer) {
 
 double DeveloperManager::calculateSalary() {
     double total = 0;
-    for (size_t i = 0; i < developers.size(); ++i) {
-        double final = developers[i]->getBaseSalary() + developers[i]->getProjects() * (10 * (developers[i]->getBaseSalary() / 100));
-        // std::cout << final
-        developers[i]->setFinalSalary(final);
-        total += final;
+    if (developers.empty()) {
+        for (size_t i = 0; i < developers.size(); ++i) {
+            double final = developers[i]->getBaseSalary() + developers[i]->getProjects() * (10 * (developers[i]->getBaseSalary() / 100));
+            developers[i]->setFinalSalary(final);
+            total += final;
+        }
     }
     return total;
 }
 
 void DeveloperManager::displayInfo() {
+    std::cout << "\n--- Development Department ---" << std::endl;
     for (size_t i = 0; i < developers.size(); ++i) {
         developers[i]->displayInfo();
     }

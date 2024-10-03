@@ -10,6 +10,7 @@ void SalesManager::addSales(SalesPerson* salesPerson) {
 }
 
 void SalesManager::displayInfo() {
+    std::cout << "\n--- Sales Department ---" << std::endl;
     for (int i = 0; i < sales_persons.size(); ++i) {
         sales_persons[i]->displayInfo();
     }
@@ -17,10 +18,12 @@ void SalesManager::displayInfo() {
 
 double SalesManager::calculateSalary(){
     double total = 0;
-    for (size_t i = 0; i < sales_persons.size(); ++i) {
-        double final = sales_persons[i]->getBaseSalary() + sales_persons[i]->getTotalSales() * (10 * (sales_persons[i]->getBaseSalary() / 100));
-        sales_persons[i]->setFinalSalary(final);
-        total += final;
+    if (sales_persons.empty()) {
+        for (size_t i = 0; i < sales_persons.size(); ++i) {
+            double final = sales_persons[i]->getBaseSalary() + sales_persons[i]->getTotalSales() * (10 * (sales_persons[i]->getBaseSalary() / 100));
+            sales_persons[i]->setFinalSalary(final);
+            total += final;
+        }
     }
     return total; 
 }

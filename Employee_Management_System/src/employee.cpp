@@ -1,6 +1,7 @@
 #include "../header/employee.h"
+#include "../header/idCount.h"
 
-Employee::Employee(const std::string& name, double baseSalary, Type dep) : name_{name}, baseSalary_{baseSalary}, id_{count_++} {}
+Employee::Employee(const std::string& name, double baseSalary, Type dep) : name_{name}, baseSalary_{baseSalary}, id_{ID::generateId()} {}
 
 double Employee::getBaseSalary() const {
     return baseSalary_;
@@ -21,5 +22,3 @@ void Employee::setFinalSalary(double value) {
 double Employee::getFinalSalary() const {
     return finalSalary_;
 }
-
-int Employee::count_ = 0; 
