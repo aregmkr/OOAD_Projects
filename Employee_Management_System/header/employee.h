@@ -19,7 +19,6 @@ public:
     ~Employee() = default;
 
     virtual void displayInfo() = 0;
-    void displayTotalSalaires() const;
     double getBaseSalary() const;
     int getId() const;
     const std::string& getName() const;

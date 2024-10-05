@@ -80,38 +80,27 @@ void EmployeeManagmentSystem::setManager(std::shared_ptr<FinanceManager> fin_man
     financeManager = fin_man;
 }
 
-// void EmployeeManagmentSystem::displayTotalSalaires() const {
-//     std::cout << "\n--- Total Salaries by Department ---" << std::endl;
-//     std::cout << "Development: $" << developmentManager->calculateSalary() << std::endl;
-//     std::cout << "HR: $" << hrManager->calculateSalary() << std::endl;
-//     std::cout << "Sales: $" << salesManager->calculateSalary() << std::endl;
-//     std::cout << "Finance: $" << financeManager->calculateSalary() << std::endl;
-// }
-
 void EmployeeManagmentSystem::displayTotalSalaires() const {
     std::cout << "\n--- Total Salaries by Department ---" << std::endl;
-
     if (developmentManager != nullptr) {
         std::cout << "Development: $" << developmentManager->calculateSalary() << std::endl;
     } else {
         std::cout << "Development: Manager not set." << std::endl;
     }
-
     if (hrManager != nullptr) {
         std::cout << "HR: $" << hrManager->calculateSalary() << std::endl;
     } else {
         std::cout << "HR: Manager not set." << std::endl;
     }
-
     if (salesManager != nullptr) {
         std::cout << "Sales: $" << salesManager->calculateSalary() << std::endl;
     } else {
         std::cout << "Sales: Manager not set." << std::endl;
     }
-
     if (financeManager != nullptr) {
         std::cout << "Finance: $" << financeManager->calculateSalary() << std::endl;
     } else {
         std::cout << "Finance: Manager not set." << std::endl;
     }
+    
 }

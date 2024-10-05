@@ -6,7 +6,10 @@ int main() {
     std::shared_ptr<Developer> developer1 = std::make_shared<Developer>("Areg", 5000);
     devManager->addDeveloper(developer1.get());
     devManager->displayInfo();
-
+    auto hrManager = std::make_shared<HrManager>("Arthur", 1234);
+    std::shared_ptr<HrRepresentive> hr1 = std::make_shared<HrRepresentive>("Ivan", 1234);
+    hrManager->addHr(hr1.get());
+    hrManager->displayInfo();
 
     // EmployeeManagmentSystem ems;
     // auto devManager = std::make_shared<DeveloperManager>("Alice1", 7000);
