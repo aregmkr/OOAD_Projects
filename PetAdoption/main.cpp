@@ -30,8 +30,8 @@ int main() {
     int age = 0, p = 0, t = 0;
     PetAdoptionCenter *center = nullptr;
     Pet *pet = nullptr;
-    std::cout << "Domestic - 1\n";
-    std::cout << "Wild - 2\n";
+    std::cout << "Welcome to the Virtual Pet Adoption Center!\n";
+    std::cout << "Please chosse an option: \n1. Adopt a Domestic Pet\n2. Adopt a Wild Pet\n3. Exit\n";
     std::cin >> t;
     std::cout << "Enter pet name: ";
     std::getline(std::cin >> std::ws, name);    
@@ -60,6 +60,8 @@ int main() {
                 pet = center->getPointer()->createBird(name, age);
             }
             break;
+        case 3:
+            return 0;
         default:
             std::cout << "Invalid input\n";
     }
