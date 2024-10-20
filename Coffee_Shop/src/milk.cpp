@@ -3,7 +3,7 @@
 Milk::Milk(Beverage *beverage) : AddOnDecorator(beverage) {}
 
 std::string Milk::getDescription() const {
-    return AddOnDecorator::getDescription() + " + Milk";
+    return beverage_->getDescription() + " + Milk";
 }
 
 

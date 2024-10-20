@@ -3,7 +3,7 @@
 Caramel::Caramel(Beverage *beverage) : AddOnDecorator(beverage) {}
 
 std::string Caramel::getDescription() const {
-    return AddOnDecorator::getDescription() + "+ Caramel";
+    return beverage_->getDescription() + " + Caramel";
 }
 
 double Caramel::cost() const {

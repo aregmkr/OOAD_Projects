@@ -3,7 +3,7 @@
 Mocha::Mocha(Beverage *beverage) : AddOnDecorator(beverage) {}
 
 std::string Mocha::getDescription() const {
-    return AddOnDecorator::getDescription() + " + Mocha\n";
+    return beverage_->getDescription() + " + Mocha\n";
 }
 
 double Mocha::cost() const {

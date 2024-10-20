@@ -3,7 +3,7 @@
 Sugar::Sugar(Beverage *beverage) : AddOnDecorator(beverage) {}
 
 std::string Sugar::getDescription() const {
-    return AddOnDecorator::getDescription() + " + Sugar ";
+    return beverage_->getDescription() + " + Sugar ";
 }
 
 double Sugar::cost() const {

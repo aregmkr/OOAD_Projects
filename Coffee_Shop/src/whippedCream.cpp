@@ -3,7 +3,7 @@
 WhippedCream::WhippedCream(Beverage *beverage) : AddOnDecorator(beverage) {}
 
 std::string WhippedCream::getDescription() const {
-    return AddOnDecorator::getDescription() + "+ Cream";
+    return beverage_->getDescription() + "+ Cream";
 }
 
 double WhippedCream::cost() const {
