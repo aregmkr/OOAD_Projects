@@ -7,6 +7,7 @@
 class StockExchange {
 public:
     void addObserver(Observer *observer, char c);
+    void removeObserver(Observer *observer, char c);
     void notify(Stock& stock, double price);
 private:
     std::vector<Observer*> observersA;

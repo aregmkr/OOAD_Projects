@@ -16,7 +16,9 @@ int main() {
     stockExchange->addObserver(broker, 'A');
     stockExchange->addObserver(ai_bot, 'B');
     stockExchange->addObserver(mobile_app, 'C');
-    stockExchange->notify(s1, 5); 
+    stockExchange->notify(s1, 120);
+    stockExchange->removeObserver(broker, 'A');
+    stockExchange->notify(s1, 120);
 
     delete broker;
     delete ai_bot;

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "stockExchange.h"
 
 void StockExchange::addObserver(Observer* observer, const char c) {
@@ -8,6 +9,16 @@ void StockExchange::addObserver(Observer* observer, const char c) {
         observersB.push_back(observer);
     } else {
         observersC.push_back(observer);
+    }
+}
+
+void StockExchange::removeObserver(Observer* observer, char c) {
+    if (c == 'A') {
+        observersA.erase(std::remove(observersA.begin(), observersA.end(), observer), observersA.end());
+    } else if (c == 'B') {
+        observersB.erase(std::remove(observersB.begin(), observersB.end(), observer), observersB.end());
+    } else {
+        observersC.erase(std::remove(observersC.begin(), observersC.end(), observer), observersC.end());
     }
 }
 
